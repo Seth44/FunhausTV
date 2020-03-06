@@ -1,1 +1,0 @@
-FunhausTV app made with CreateReactApp
