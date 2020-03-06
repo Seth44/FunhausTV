@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1000" height="1000">
+    <circle style="fill:#ff7f00" cx="500" cy="500" r="500" />
+    <circle style="fill:#000000" cx="500" cy="500" r="447" />
+    <circle style="fill:#ff7f00" cx="500" cy="500" r="411" />
+    <path style="fill:#000000" d="m 222,295 0,102 56,0 0,206 -56,0 0,102 232,0 0,-102 -56,0 0,-54 89,0 0,-98 -89,0 0,-54 146,0 0,-102 z"/>
+    <path style="fill:#000000" d="m 598,295 0,156 -58,0 0,98 58,0 0,54 -54,0 0,102 232,0 0,-102 -54,0 0,-206 54,0 0,-102 z"/>
+</svg>
