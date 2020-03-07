@@ -1,4 +1,10 @@
 import React, { useState, useEffect } from 'react';
+
+// Firebase App (the core Firebase SDK) is always required and
+// must be listed before other Firebase SDKs
+import * as firebase from "firebase/app";
+import "firebase/database";
+
 import Button from '@material-ui/core/Button';
 import Icon from '@material-ui/core/Icon';
 import logo from './Funhaus_circle_logo.svg';
@@ -6,36 +12,74 @@ import './App.css';
 import YouTubeFrame from './YouTubeFrame';
 import InfoDrawer from './InfoDrawer';
 
-import { getRandomDate, getRandomVideoId } from './utils';
+import { getRandomVideo } from './utils';
 
 function App() {
+
+  // function saveVideoIds(nextPageToken = null) {
+  //   const API_KEY = '';
+
+  //   // playlistItem url
+  //   let url;
+  //   if (nextPageToken) {
+  //     url = `https://www.googleapis.com/youtube/v3/playlistItems?part=contentDetails&maxResults=50&pageToken=${nextPageToken}&playlistId=UUboMX_UNgaPBsUOIgasn3-Q&key=${API_KEY}`;
+  //   } else {
+  //     url = `https://www.googleapis.com/youtube/v3/playlistItems?part=contentDetails&maxResults=50&playlistId=UUboMX_UNgaPBsUOIgasn3-Q&key=${API_KEY}`;
+  //   }
+  //   debugger;
+  //   fetch(url, { 
+  //     method: 'GET', 
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },
+  //   })
+  //   .then((response) => response.json())
+  //   .then((data) => {
+  //     console.log('Success:', data);
+
+  //     data.items.forEach(item => {
+  //       // Get a key for a new Post.
+  //       const newVidKey = firebase.database().ref().child('videos').push().key;
+  //       debugger;
+  //       firebase.database().ref('videos/' + newVidKey).set({
+  //         videoId: item.contentDetails.videoId
+  //       });
+  //     })
+
+  //     debugger;
+  //     const pageToken = data.nextPageToken;
+  //     if (pageToken) saveVideoIds(pageToken);
+  //   })
+  //   .catch((error) => {
+  //     console.error('Error:', error);
+  //   });
+  // }
+
   const [videoId, setVideoId]=useState(0) //initialize your state here
 
   function getVideoId() {
-    const API_KEY = 'AIzaSyCohx22ge29KSVrGwayOszC21PomdrJ1V8';
-    const randomDate = getRandomDate();
-    console.log(randomDate);
-    const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCboMX_UNgaPBsUOIgasn3-Q&maxResults=50&order=date&publishedBefore=${randomDate}T00%3A00%3A00Z&type=video&key=${API_KEY}`;
-    fetch(url, { 
-      method: 'GET', 
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
-    .then((response) => response.json())
-    .then((data) => {
-      console.log('Success:', data);
-      const randomVideoId = getRandomVideoId(data.items);
-      setVideoId(randomVideoId);
-      console.log(randomVideoId);
-    })
-    .catch((error) => {
-      console.error('Error:', error);
+    let videos;
+    firebase.database().ref('/videos/').once('value').then(function(snapshot) {
+      videos = snapshot.val();
+      const video = getRandomVideo(videos);
+      setVideoId(video.videoId);
+      console.log(video)
     });
   }
 
   useEffect(() => {
-    getVideoId(setVideoId)
+    // Set the configuration for your app
+    // TODO: Replace with your project's config object
+    const config = {
+      apiKey: "AIzaSyANrcGcG1YM9pzL-c5r4DgaRw-sYQkEkSc",
+      authDomain: "funhaustv-270301.firebaseapp.com",
+      databaseURL: "https://funhaustv-270301.firebaseio.com/",
+      storageBucket: "bucket.appspot.com"
+    };
+    firebase.initializeApp(config);    
+    // saveVideoIds();
+
+    getVideoId(setVideoId);
   }, []);
 
   console.log("App videoId:", videoId);

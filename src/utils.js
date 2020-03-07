@@ -13,7 +13,12 @@ export function getRandomDate() {
     return `${randomYear}-${randomMonth}-${randomDay}`;
 }
 
-export function getRandomVideoId(items) {
-    const randomNum = getRandomInt(0, 50);
-    return items[randomNum].id.videoId;
-}
+// export function getRandomVideoId(items) {
+//     const randomNum = getRandomInt(0, 50);
+//     return items[randomNum].id.videoId;
+// }
+
+export function getRandomVideo(obj) {
+    const keys = Object.keys(obj);
+    return obj[keys[ keys.length * Math.random() << 0]];
+};
