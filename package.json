@@ -2,7 +2,7 @@
   "name": "FunhausTV",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://seth44.github.io/FunhausTV/",
+  "homepage": "https://funhaustv.com",
   "dependencies": {
     "@material-ui/core": "^4.9.5",
     "@testing-library/jest-dom": "^4.2.4",
