@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/FunhausTV/static/css/main.2d67727d.chunk.css",
-    "main.js": "/FunhausTV/static/js/main.04545192.chunk.js",
-    "main.js.map": "/FunhausTV/static/js/main.04545192.chunk.js.map",
-    "runtime-main.js": "/FunhausTV/static/js/runtime-main.740d55c6.js",
-    "runtime-main.js.map": "/FunhausTV/static/js/runtime-main.740d55c6.js.map",
-    "static/js/2.0620da03.chunk.js": "/FunhausTV/static/js/2.0620da03.chunk.js",
-    "static/js/2.0620da03.chunk.js.map": "/FunhausTV/static/js/2.0620da03.chunk.js.map",
-    "index.html": "/FunhausTV/index.html",
-    "precache-manifest.81cb74f76097e8936a02d288f83943d5.js": "/FunhausTV/precache-manifest.81cb74f76097e8936a02d288f83943d5.js",
-    "service-worker.js": "/FunhausTV/service-worker.js",
-    "static/css/main.2d67727d.chunk.css.map": "/FunhausTV/static/css/main.2d67727d.chunk.css.map",
-    "static/js/2.0620da03.chunk.js.LICENSE.txt": "/FunhausTV/static/js/2.0620da03.chunk.js.LICENSE.txt",
-    "static/media/Funhaus_circle_logo.svg": "/FunhausTV/static/media/Funhaus_circle_logo.fd81c1f7.svg"
+    "main.css": "/static/css/main.2d67727d.chunk.css",
+    "main.js": "/static/js/main.cae0656e.chunk.js",
+    "main.js.map": "/static/js/main.cae0656e.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.52a73f12.js",
+    "runtime-main.js.map": "/static/js/runtime-main.52a73f12.js.map",
+    "static/js/2.bc1230ca.chunk.js": "/static/js/2.bc1230ca.chunk.js",
+    "static/js/2.bc1230ca.chunk.js.map": "/static/js/2.bc1230ca.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.1b930c6812fc3afa16f1010fc9ed5aaf.js": "/precache-manifest.1b930c6812fc3afa16f1010fc9ed5aaf.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.2d67727d.chunk.css.map": "/static/css/main.2d67727d.chunk.css.map",
+    "static/js/2.bc1230ca.chunk.js.LICENSE.txt": "/static/js/2.bc1230ca.chunk.js.LICENSE.txt",
+    "static/media/Funhaus_circle_logo.svg": "/static/media/Funhaus_circle_logo.fd81c1f7.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.740d55c6.js",
-    "static/js/2.0620da03.chunk.js",
+    "static/js/runtime-main.52a73f12.js",
+    "static/js/2.bc1230ca.chunk.js",
     "static/css/main.2d67727d.chunk.css",
-    "static/js/main.04545192.chunk.js"
+    "static/js/main.cae0656e.chunk.js"
   ]
 }
