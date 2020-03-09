@@ -16,7 +16,7 @@ import DisclaimerBar from './components/DisclaimerBar';
 import { getRandomVideo } from './utils';
 
 function App() {
-
+  // Function to scrape YouTube playlist and store videoIds
   // function saveVideoIds(nextPageToken = null) {
   //   const API_KEY = '';
 
@@ -60,12 +60,25 @@ function App() {
 
   function getVideoId() {
     let videos;
-    firebase.database().ref('/videos/').once('value').then(function(snapshot) {
-      videos = snapshot.val();
-      const video = getRandomVideo(videos);
+    // Get saved data from sessionStorage
+    const storedVideos = sessionStorage.getItem('storedVideos');
+    debugger;
+    if (!storedVideos) {
+      firebase.database().ref('/videos/').once('value').then(function(snapshot) {
+        videos = snapshot.val();
+
+        // Save data to sessionStorage
+        sessionStorage.setItem('storedVideos', JSON.stringify(videos));
+
+        const video = getRandomVideo(videos);
+        setVideoId(video.videoId);
+        console.log(video)
+      });
+    } else {
+      const video = getRandomVideo(JSON.parse(storedVideos));
       setVideoId(video.videoId);
       console.log(video)
-    });
+    }
   }
 
   useEffect(() => {
