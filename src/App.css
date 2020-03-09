@@ -54,9 +54,9 @@
 
 .YouTubeFrame div {
   position: relative;
-  padding-top: 30px;
   height: 75vh;
   overflow: hidden;
+  max-height: 780px;
 }
    
 .YouTubeFrame iframe,
@@ -101,6 +101,24 @@
   margin-left: 16px;
   margin-right: 16px;
 }
+
+
+/* DisclaimerBar.js */
+
+.disclaimer-bar {
+  text-align: left;
+}
+
+.disclaimer-bar h4 {
+  margin: 0;
+}
+
+.disclaimer-bar .MuiAlert-action {
+  align-items: end;
+}
+
+
+/* Media queries for responsive breakpoints */
 
 @media (max-width: 1300px) {
   .YouTubeFrame div {

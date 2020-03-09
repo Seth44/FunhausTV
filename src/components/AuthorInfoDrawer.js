@@ -4,7 +4,7 @@ import Drawer from '@material-ui/core/Drawer';
 import Button from '@material-ui/core/Button';
 import Paper from '@material-ui/core/Paper';
 
-import logo from './Funhaus_circle_logo.svg';
+import logo from '../Funhaus_circle_logo.svg';
 
 const useStyles = makeStyles({
   list: {
@@ -54,10 +54,6 @@ export default function AuthorInfoDrawer() {
             I've been sad to see the issues arise with the FunhausTV stream so I've decided to take it upon myself to create somthing similar - minus InsideGaming.
             I was suprised to find you can't just shuffle a YouTube channel so I decided to create this website which essentially replaces FunhausTV for me.
             I cast a tab to my Chromecast and let it run through random video after random video. See "How this do things?" button for implementation information and about any future plans for this site.</p>
-
-          <h4>Disclaimers:</h4>
-          <p>I am in no way affliated with Funhaus or RoosterTeeth. I do not gain any monetary value or profit from this website.
-             I am just a huge fan and I will take this site down if anyone from Funhaus or RoosterTeeth asks me to.</p>
         </div>
         <a
             className="App-link"

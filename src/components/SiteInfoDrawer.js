@@ -4,7 +4,7 @@ import Drawer from '@material-ui/core/Drawer';
 import Button from '@material-ui/core/Button';
 import Paper from '@material-ui/core/Paper';
 
-import logo from './Funhaus_circle_logo.svg';
+import logo from '../Funhaus_circle_logo.svg';
 
 const useStyles = makeStyles({
   list: {

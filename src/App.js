@@ -8,9 +8,10 @@ import "firebase/database";
 import Button from '@material-ui/core/Button';
 import Icon from '@material-ui/core/Icon';
 import './App.css';
-import YouTubeFrame from './YouTubeFrame';
-import AuthorInfoDrawer from './AuthorInfoDrawer';
-import SiteInfoDrawer from './SiteInfoDrawer';
+import YouTubeFrame from './components/YouTubeFrame';
+import AuthorInfoDrawer from './components/AuthorInfoDrawer';
+import SiteInfoDrawer from './components/SiteInfoDrawer';
+import DisclaimerBar from './components/DisclaimerBar';
 
 import { getRandomVideo } from './utils';
 
@@ -104,6 +105,7 @@ function App() {
           <SiteInfoDrawer />
         </div>
       </header>
+      <DisclaimerBar />
     </div>
   );
 }
