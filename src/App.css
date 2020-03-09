@@ -35,6 +35,13 @@
 .App-header h2 {
   margin: 0;
   color: orange;
+  margin-top: 8px;
+}
+
+.App-link {
+  display: flex;
+  align-items: center;
+  margin: 16px;
 }
 
 .YouTubeFrame {
@@ -47,8 +54,9 @@
 
 .YouTubeFrame div {
   position: relative;
-  padding-bottom: 56.25%;
-  padding-top: 30px; height: 0; overflow: hidden;
+  padding-top: 30px;
+  height: 75vh;
+  overflow: hidden;
 }
    
 .YouTubeFrame iframe,
@@ -65,10 +73,11 @@
   margin-bottom: 16px !important;
 }
 
-.info-drawer {
-  position: absolute;
-  left: 20px;
-  bottom: 20px;
+.info-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 95%;
+  max-width: 1320px;
 }
 
 .info-drawer button {
@@ -78,6 +87,38 @@
 
 .info-drawer button:hover {
   background-color: rgba(248, 148, 6, .1);
+}
+
+.info-open .info-paper {
+  max-width: 1320px;
+  background-color: #9e9e9e;
+  display: flex;
+}
+
+.info-paper h3,
+.info-paper h4,
+.info-paper p {
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+@media (max-width: 1300px) {
+  .YouTubeFrame div {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px; 
+    height: 0; 
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 600px) {
+  .info-buttons {
+    flex-direction: column;
+  }
+  .info-drawer {
+    margin-bottom: 16px;
+  }
 }
 
 @keyframes stretch {

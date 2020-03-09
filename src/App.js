@@ -7,10 +7,10 @@ import "firebase/database";
 
 import Button from '@material-ui/core/Button';
 import Icon from '@material-ui/core/Icon';
-import logo from './Funhaus_circle_logo.svg';
 import './App.css';
 import YouTubeFrame from './YouTubeFrame';
-import InfoDrawer from './InfoDrawer';
+import AuthorInfoDrawer from './AuthorInfoDrawer';
+import SiteInfoDrawer from './SiteInfoDrawer';
 
 import { getRandomVideo } from './utils';
 
@@ -88,26 +88,21 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h2>FunhausTV</h2>
-        {/* <a
-            className="App-link"
-            href="https://www.youtube.com/channel/UCboMX_UNgaPBsUOIgasn3-Q/featured"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-          <img src={logo} className="App-logo" alt="logo" />
-        </a> */}
         <YouTubeFrame videoId={videoId} getVideoId={getVideoId} />
-        <Button
-          className="skip-button"
-          variant="contained"
-          color="default"
-          size="large"
-          onClick={getVideoId}
-          endIcon={<Icon>skip_next</Icon>}
-        >
-          Skip
-        </Button>
-        <InfoDrawer />
+        <div className="info-buttons">
+          <AuthorInfoDrawer />
+          <Button
+            className="skip-button"
+            variant="contained"
+            color="default"
+            size="large"
+            onClick={getVideoId}
+            endIcon={<Icon>skip_next</Icon>}
+          >
+            Skip
+          </Button>
+          <SiteInfoDrawer />
+        </div>
       </header>
     </div>
   );
