@@ -19,7 +19,8 @@ const useStyles = makeStyles(theme => ({
 export default function DisclaimerBar() {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
-
+  const seenDisclaimer = localStorage.getItem('seenDisclaimer')
+  
   React.useEffect(() => {
     setOpen(true);
   }, []);
@@ -28,19 +29,24 @@ export default function DisclaimerBar() {
     if (reason === 'clickaway') {
       return;
     }
+    localStorage.setItem('seenDisclaimer', '1')
     setOpen(false);
   };
 
   return (
-    <div className={classes.root}>
-      <Snackbar open={open} onClose={handleClose}>
-        <Alert className="disclaimer-bar" onClose={handleClose} severity="info">
-          <h4>Disclaimer:</h4>
-          <p>I am in no way affliated with Funhaus or RoosterTeeth. I do not gain any monetary value or profit from this website.
-             I am just a huge fan trying to help out the Funhaus community. I will take this site down if anyone affliated with
-             Funhaus or RoosterTeeth asks me to take it down.</p>
-        </Alert>
-      </Snackbar>
-    </div>
+    <>
+    {!seenDisclaimer &&
+      <div className={classes.root}>
+        <Snackbar open={open} onClose={handleClose}>
+          <Alert className="disclaimer-bar" onClose={handleClose} severity="info">
+            <h4>Disclaimer:</h4>
+            <p>I am in no way affiliated with Funhaus or RoosterTeeth. I do not gain any monetary value or profit from this website.
+              I am just a huge fan trying to help out the Funhaus community. I will take this site down if anyone affiliated with
+              Funhaus or RoosterTeeth asks me to take it down.</p>
+          </Alert>
+        </Snackbar>
+      </div>
+    }
+    </>
   );
 }
